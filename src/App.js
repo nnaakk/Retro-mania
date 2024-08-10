@@ -9,7 +9,9 @@ import { Register } from "./components/register/Register";
 import { Login } from "./components/login/Login";
 import { Logout } from "./components/logaut/Logaut";
 import { Footer } from  "./components/Footer"
-import { Car } from "./components/Car";
+import { Car } from "./components/car/Car"
+import { CarDetails } from "./components/carDetails/CarDetails";
+
 function App() {
 
   return (
@@ -18,17 +20,15 @@ function App() {
       <Header />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/imiges" element={<Car />} />
+      <Route path="/imiges" element={<Car/>}  />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout/>} />
-      
+      <Route path="/details" element={<CarDetails/>} />
       </Routes>
-      <Footer />
 
-     
-        
-      
+      <Footer />
+  
       </AuthProvider>
   );
 }

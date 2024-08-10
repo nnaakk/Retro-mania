@@ -2,7 +2,7 @@ import regi from './Register.module.css'
 import { useContext } from "react";
 
 
-import { useForm } from "../../hooks/useForm"
+import { useForm } from "../hooks/useForm"
 import { AuthContext } from "../../contexts/AuthContext";
 
 export const Register = () => {
@@ -19,7 +19,7 @@ export const Register = () => {
 <form method='post' onSubmit={onSubmit}>
   <div className={regi.container}>
     <h1>Register</h1>
-    <p>Please fill in this form to create an account.</p>
+   
     <hr />
     <label htmlFor="email">
       <b>Email</b>
@@ -60,7 +60,7 @@ export const Register = () => {
     />
     <hr />
     <p>
-      By creating an account you agree to our{" "}
+    
       <a href="#">Terms &amp; Privacy</a>.
     </p>
     <button type="submit" className={regi.registerbtn}>
