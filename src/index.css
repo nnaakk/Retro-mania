@@ -1,0 +1,145 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-image: url(/public/car1.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+footer {
+  padding: 0.5em;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+/*ads*/
+
+.listings-container {
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+.item-container {
+  margin-right: 20px;
+  margin-left: 20px;
+}
+
+.item {
+  width: 100%;
+  height: 220px;
+  display: flex;
+  padding: 10px;
+  margin-bottom: 15px;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #ddd;
+  background-color: #fff;
+}
+
+.photo {
+  flex: 1;
+  margin-right: -300px; /* Reduce margin to bring the image closer to text */
+  margin-left: 20px;
+  margin-bottom: 5px;
+}
+
+.photo-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.big-photo {
+  margin-bottom: 15px; /* Reduced margin for a tighter layout */
+}
+
+.main-pic {
+  width: 150px;
+  height: 150px;
+  border-radius: 4px;
+  object-fit: cover; /* Ensures the image doesn't stretch */
+}
+
+.promo-line {
+  position: absolute; /* Position the badge over the image */
+  top: 20px;
+  left: 30px;
+  z-index: 10; /* Ensure the badge is on top of the image */
+}
+
+.links {
+  display: flex;
+  gap: 5px;
+  padding-top: 5px; /* Reduced padding to bring links closer */
+}
+
+
+.details-link, .save-link, .mark-link {
+  text-decoration: none;
+  color: #0066cc;
+  font-size: 12px;
+  margin-top: -20px;
+}
+
+.details-link strong {
+  font-weight: bold;
+}
+
+.text {
+  flex: 2;
+  padding-left: -60px; /* Reduced padding for a tighter layout */
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: -40px;
+}
+
+.title-link {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  text-decoration: none;
+}
+
+.price {
+  font-size: 20px;
+  color: #000;
+}
+
+
+
+.params, .info, .seller {
+  margin-top: 5px; /* Reduced margin for a tighter layout */
+}
+
+.params span {
+  display: inline-block;
+  margin-right: 10px;
+  font-size: 14px;
+  color: #666;
+}
+
+.info {
+  font-size: 14px;
+  color: #333;
+}
+
+.seller-info {
+  font-size: 14px;
+  color: #333;
+}
