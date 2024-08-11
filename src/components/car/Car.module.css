@@ -1,4 +1,4 @@
-.item-container {
+.itemContainer {
     margin-right: 20px;
     margin-left: 20px;
   }
@@ -22,23 +22,23 @@
     margin-bottom: 5px;
   }
   
-  .photo-wrapper {
+  .photoWrapper {
     display: flex;
     flex-direction: column;
   }
   
-  .big-photo {
+  .bigPhoto {
     margin-bottom: 15px; /* Reduced margin for a tighter layout */
   }
   
-  .main-pic {
+  .mainPic {
     width: 150px;
     height: 150px;
     border-radius: 4px;
     object-fit: cover; /* Ensures the image doesn't stretch */
   }
   
-  .promo-line {
+  .promoLine {
     position: absolute; /* Position the badge over the image */
     top: 20px;
     left: 30px;
@@ -52,14 +52,14 @@
   }
   
   
-  .details-link, .save-link, .mark-link {
+  .detailsLink, .saveLink, .markLink {
     text-decoration: none;
     color: #0066cc;
     font-size: 12px;
     margin-top: -20px;
   }
   
-  .details-link strong {
+  .detailsLink strong {
     font-weight: bold;
   }
   
@@ -75,7 +75,7 @@
     margin-top: -40px;
   }
   
-  .title-link {
+  .titleLink {
     font-size: 20px;
     font-weight: bold;
     color: #333;

@@ -1,16 +1,16 @@
 import { Routes, Route, Link } from "react-router-dom"
 import { AuthProvider } from './contexts/AuthContext';
+import { CarProvider } from "./contexts/CarContext";
 
-import { Imiges } from './components/Imiges'
 
-import { Home } from './components/Home'
-import { Header } from "./components/Header";
+import { Home } from './components/home/Home'
+import { Header } from "./components/header/Header";
 import { Register } from "./components/register/Register";
 import { Login } from "./components/login/Login";
 import { Logout } from "./components/logaut/Logaut";
-import { Footer } from  "./components/Footer"
+import { Footer } from  "./components/footer/Footer"
 import { Car } from "./components/car/Car"
-import { CarDetails } from "./components/carDetails/CarDetails";
+import { CarDetails } from './components/carDetails/CarDetails'
 
 function App() {
 

@@ -1,9 +1,9 @@
 export const Footer = () => {
     return (
         
-          <div>
+          <footer>
           <p style={{
-  position: "flex",
+  position: "fixed",
   left: "0",
   bottom:"0",
   width:"100%",
@@ -11,7 +11,7 @@ export const Footer = () => {
   color: "white",
   "text-align":" center",
 }}>Copyright © designed by Nikolay Kolarov</p>
-          </div>
+          </footer>
         
     );
 };
