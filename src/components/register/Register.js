@@ -2,7 +2,7 @@ import regi from './Register.module.css'
 import { useContext } from "react";
 
 
-import { useForm } from "../hooks/useForm"
+import { useForm } from "../../hooks/useForm"
 import { AuthContext } from "../../contexts/AuthContext";
 
 export const Register = () => {

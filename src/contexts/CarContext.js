@@ -1,9 +1,12 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-
+import {useAuthContext} from '../contexts/AuthContext'
 import { carServiceFactory } from '../servises/carService';
 
 export const CarContext = createContext();
+
+
+
 
 export const CarProvider = ({
     children,
@@ -11,6 +14,7 @@ export const CarProvider = ({
     const navigate = useNavigate();
     const [cars, setCars] = useState([]);
     const carService = carServiceFactory();
+    let { isAuthenticated } = useAuthContext()
 
     useEffect(() => {
         carService.getAll()
@@ -19,12 +23,21 @@ export const CarProvider = ({
             })
     }, []);
 
-    const onCreateCarSubmit = async (data) => {
+    const onCreateCarSubmit = async (data) => { 
+
+        console.log(isAuthenticated);
+        
+        if(isAuthenticated){
         const newCar = await carService.create(data);
 
         setCars(state => [...state, newCar]);
-
-        navigate('/catalog');
+        navigate('/carlist');
+      
+        } else {
+        navigate('/login');
+        return
+      }
+        
     };
 
     const onCarEditSubmit = async (values) => {
@@ -58,7 +71,7 @@ export const CarProvider = ({
     );
 };
 
-export const useGameContext = () => {
+export const useCarContext = () => {
     const context = useContext(CarContext);
 
     return context;

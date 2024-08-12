@@ -1,6 +1,6 @@
 import { createContext, useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useLocalStorage } from '../components/hooks/useLocalStorage';
+import { useLocalStorage } from '../hooks/useLocalStorage';
 
 import { authServiceFactory } from '../servises/authService';
 
@@ -44,7 +44,7 @@ console.log(result);
     };
 
     const onLogout = async () => {
-        await authService.logout();
+        await authServiceFactory.logout();
 
         setAuth({});
     };

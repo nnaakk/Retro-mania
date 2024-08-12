@@ -9,26 +9,26 @@ import { Register } from "./components/register/Register";
 import { Login } from "./components/login/Login";
 import { Logout } from "./components/logaut/Logaut";
 import { Footer } from  "./components/footer/Footer"
-import { Car } from "./components/car/Car"
-import { CarDetails } from './components/carDetails/CarDetails'
-
+import { DescribeCar } from "./components/describeCar/DescribeCar"
+import { CarDetails } from './components/CarDetails/CarDetails'
+import { CarList } from "./components/carList/CarList"
 function App() {
 
   return (
     <AuthProvider>
-    
+<CarProvider>
       <Header />
       <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/imiges" element={<Car/>}  />
+      <Route path="/describe" element={<DescribeCar/>}  />
       <Route path="/register" element={<Register />} />
       <Route path="/login" element={<Login />} />
       <Route path="/logout" element={<Logout/>} />
       <Route path="/details" element={<CarDetails/>} />
+      <Route path="/carlist" element={<CarList/>} />
       </Routes>
-
       <Footer />
-  
+      </CarProvider>
       </AuthProvider>
   );
 }

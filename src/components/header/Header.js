@@ -7,13 +7,13 @@ export const Header = () => {
   const {isAuthenticated, userEmail} = useContext(AuthContext)
     return (
      
-     
+     <div className={headCss.hed}>
       <ul className={headCss.ul}>
         <li className={headCss.li}><Link  to="/" className={headCss.a} >Home</Link></li>
         {isAuthenticated && (
           <>
-           <span style={{color: 'white',fontSize: '30px'}}>{userEmail}</span>
-        <li className={headCss.li}><Link to="/imiges" className={headCss.a}>Imiges</Link></li>
+           <span style={{color: 'red',fontSize: '30px'}}>{userEmail}</span>
+        <li className={headCss.li}><Link to="/imiges" className={headCss.a}>Images</Link></li>
         <li className={headCss.li}><Link to="/logout" className={headCss.a}>Logout</Link></li>
         </>
          )}
@@ -25,7 +25,7 @@ export const Header = () => {
          )}
       </ul>
       
-    
+    </div>
       
     )
        

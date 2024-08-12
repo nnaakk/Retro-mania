@@ -1,6 +1,6 @@
 const requester = async (method, url, data) => {
     const options = {};
-console.log(data);
+//console.log(data);
     if (method !== 'GET') {
         options.method = method;
 
@@ -26,7 +26,7 @@ console.log(data);
     }
 
     const response = await fetch(url, options);
-console.log(response);
+     console.log(response);
     if (response.status === 204) {
         return {};
     }
@@ -34,7 +34,8 @@ console.log(response);
     const result = await response.json();
 
     if (!response.ok) {
-        throw result;
+       alert("You are not othorized")
+       
     }
 
     return result;
