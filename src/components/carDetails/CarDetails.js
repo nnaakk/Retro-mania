@@ -1,6 +1,27 @@
-import React, { useState } from 'react';
+import { useEffect, useState, useReducer } from 'react';
+import { useParams, useNavigate, Link } from 'react-router-dom';
+
+import { carServiceFactory } from '../../servises/carService';
+import * as commentService from '../../servises/commentService';
+import { useService } from '../../hooks/useService';
+import { useAuthContext } from '../../contexts/AuthContext';
+
+//import { AddComment } from './AddComment/AddComment';
+//import { carReducer } from '../../reducers/carReducer';
+import { useCarContext } from '../../contexts/CarContext';
+//import { Buttons } from './AddComment/Buttons';
+import { createLike, getAllLikes } from '../../servises/likeService';
+
+
 import descrCar from "./carDetails.module.css" 
- export const CarDetails = () => {
+ export const CarDetails = () =>
+  
+  
+  
+  
+  
+  
+  {
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isModalOpen, setIsModalOpen] = useState(false);
 

@@ -44,7 +44,7 @@ console.log(result);
     };
 
     const onLogout = async () => {
-        await authServiceFactory.logout();
+        await authService.logout();
 
         setAuth({});
     };
