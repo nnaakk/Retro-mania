@@ -2,6 +2,7 @@ import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import carStyle from "./Car.module.css"
 export const Car = ({
+  _id,
   make,
   model,
   type,
@@ -67,7 +68,7 @@ export const Car = ({
           <div className={carStyle.info}>
            Char: {char}
           </div>
-          <Link to={'/details'} >Details</Link>
+          <Link to={`/carList/${_id}`} >Details</Link>
           <div className={carStyle.seller}>
             
           </div>

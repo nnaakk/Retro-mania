@@ -6,14 +6,15 @@ import * as commentService from '../../servises/commentService';
 import { useService } from '../../hooks/useService';
 import { useAuthContext } from '../../contexts/AuthContext';
 
-//import { AddComment } from './AddComment/AddComment';
-//import { carReducer } from '../../reducers/carReducer';
+import { AddComment } from '../comments/AddComments';
+import { carReducer } from '../../redusers/carReduser';
 import { useCarContext } from '../../contexts/CarContext';
 //import { Buttons } from './AddComment/Buttons';
 import { createLike, getAllLikes } from '../../servises/likeService';
 
 
 import descrCar from "./carDetails.module.css" 
+
  export const CarDetails = () =>
   
   

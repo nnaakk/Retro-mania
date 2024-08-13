@@ -230,8 +230,8 @@ export const DescribeCar = () => {
               <p >Char</p>
             </label>
             <textarea
-              //type="textarea"
-             // placeholder="Enter Char"
+              type="textarea"
+              placeholder="Enter Char..."
               name="char"
               id="char"
               rows="10"
@@ -241,12 +241,12 @@ export const DescribeCar = () => {
               onChange={changeHandler}
               >
               </textarea>
-              <label htmlFor="char">
+              <label htmlFor="summary">
               <p >Summary</p>
             </label>
             <textarea
-              //type="textarea"
-             // placeholder="Enter Char"
+              type="textarea"
+              placeholder="Enter Summary..."
               name="summary"
               id="summari"
               rows="10"

@@ -19,7 +19,7 @@ padding: 16px;
 }
 
 /* Full-width input fields */
-input[type=text], input[type=Number],textarea[type=textarea] {
+input[type=text], input[type=Number],textarea {
 width: 97%;
 padding: 15px;
 margin: 5px 0 22px 0;
@@ -28,7 +28,7 @@ border: none;
 background: #f1f1f1;
 }
 
-input[type=text]:focus, input[type=Number]:focus,textarea[type=textarea]:focus {
+input[type=text]:focus, input[type=Number]:focus,textarea:focus {
 background-color: #ddd;
 outline: none;
 }
@@ -62,3 +62,5 @@ color: dodgerblue;
 background-color: #f0b9b9;
 text-align: center;
 }
+
+   
