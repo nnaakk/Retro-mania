@@ -15,6 +15,19 @@ export const AuthProvider = ({
     const authService = authServiceFactory(auth.accessToken)
 
     const onLoginSubmit = async (data) => {
+
+     const {email, password} = data
+
+     if(data.email === '' || data.password === ''){
+        alert("All fields are requered!")
+        return
+     }
+     if(!data.email.includes('@')){
+        alert(`Email is not email!`)
+        return;
+     }
+
+     
         try {
             const result = await authService.login(data);
 
@@ -22,19 +35,27 @@ export const AuthProvider = ({
 
             navigate('/');
         } catch (error) {
-            console.log('There is a problem');
+           alert('There is a problem');
         }
     };
 
     const onRegisterSubmit = async (values) => {
         const { pswRepeat, ...registerData } = values;
+        if(registerData.password === ''|| registerData.pswRepeat === '' || registerData.email === ''){
+            alert("All fields are requered!")
+            return
+        }
         if (pswRepeat !== registerData.password) {
+            alert(`Passwords missmuch!`)
             return;
         }
-
+        if(!registerData.email.includes("@")){
+            alert(`Email is not email!`)
+        return;
+        }
         try {
             const result = await authService.register(registerData);
-console.log(result);
+            console.log(result);
             setAuth(result);
 
             navigate('/');

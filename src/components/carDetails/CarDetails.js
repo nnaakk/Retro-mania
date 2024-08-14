@@ -5,8 +5,8 @@ import { carServiceFactory } from '../../servises/carService';
 import * as commentService from '../../servises/commentService';
 import { useService } from '../../hooks/useService';
 import { useAuthContext } from '../../contexts/AuthContext';
-
-
+import { CarContext } from '../../contexts/CarContext';
+import { useCarContext } from '../../contexts/CarContext';
 import { carReducer } from '../../redusers/carReduser';
 
 
@@ -32,6 +32,7 @@ import descrCar from "./carDetails.module.css"
   const [car, dispatch] = useReducer(carReducer, {});
   const carService = useService(carServiceFactory)
   const navigate = useNavigate();
+  const { deleteCar} = useCarContext()
 
   useEffect(() => {
     Promise.all([
@@ -87,12 +88,13 @@ const isOwner = car._ownerId === userId;
 
 
   const onDeleteClick = async () => {
+    deleteCar(car._id);
     // eslint-disable-next-line no-restricted-globals
     const result = confirm(`Are you sure you want to delete ${car.make}`);
     if (result) {
         await carService.delete(car._id);
 
-       // deleteCar(car._id);
+      
 
         navigate('/carList');
     }

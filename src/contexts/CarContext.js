@@ -48,12 +48,13 @@ export const CarProvider = ({
         navigate(`/carList/${values._id}`);
     };
 
-    const deleteCar = (gameId) => {
-        setCars(state => state.filter(game => game._id !== gameId));
+    const deleteCar = (carId) => {
+        setCars(state => state.filter(car => car._id !== carId));
+        navigate('/carlist')
     };
 
-    const getCar = (gameId) => {
-        return cars.find(game => game._id === gameId);
+    const getCar = (carId) => {
+        return cars.find(car => car._id === carId);
     };
 
     const contextValues = {

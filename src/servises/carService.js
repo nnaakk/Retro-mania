@@ -7,8 +7,12 @@ export const carServiceFactory = (token) => {
 
     const getAll = async () => {
         const result = await request.get(baseUrl);
-        const cars = Object.values(result);
-    
+
+        
+        let cars = Object.values(result);
+         if(cars.length){console.log(cars)}
+        
+        
         return cars;
     };
     
@@ -28,7 +32,7 @@ export const carServiceFactory = (token) => {
     
     const edit = (carId, data) => request.put(`${baseUrl}/${carId}`, data);
 
-    const deleteGame = (carId) => request.delete(`${baseUrl}/${carId}`);
+    const deleteCar = (carId) => request.delete(`${baseUrl}/${carId}`);
 
 
     return {
@@ -36,6 +40,6 @@ export const carServiceFactory = (token) => {
         getOne,
         create,
         edit,
-        delete: deleteGame,
+        delete: deleteCar,
     };
 }

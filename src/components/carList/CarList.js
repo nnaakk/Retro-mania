@@ -15,14 +15,15 @@ export const CarList = () => {
            
              <div className={list.rap}>
              <h1 style={{textAlign:"center", color:"red"}}>All Cars</h1>
+             {cars.length === 0 && (
+                <h3 style={{textAlign:"center", color:"black"}}>No cars yet</h3>
+            )}
             {cars.map(x =>
                 <Car key={x._id} {...x} />
             )}
             </div>
 
-            {cars.length === 0 && (
-                <h3 className="no-articles">No articles yet</h3>
-            )}
+         
         </section>
     );
 };
