@@ -6,13 +6,13 @@ import * as commentService from '../../servises/commentService';
 import { useService } from '../../hooks/useService';
 import { useAuthContext } from '../../contexts/AuthContext';
 
-import { AddComment } from '../comments/AddComments/AddComments';
+
 import { carReducer } from '../../redusers/carReduser';
-import { useCarContext } from '../../contexts/CarContext';
-//import { Buttons } from './AddComment/Buttons';
+
+
 import { createLike, getAllLikes } from '../../servises/likeService';
 
-import { Buttons } from '../comments/Buttons'; 
+import { Buttons } from '../comments/buttons/Buttons'; 
 import descrCar from "./carDetails.module.css" 
 
  export const CarDetails = () =>
@@ -27,8 +27,8 @@ import descrCar from "./carDetails.module.css"
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const {carId} = useParams()
-  const { userId, isAuthenticated, userEmail } = useAuthContext();
-  const { deleteCar } = useCarContext();
+  const { userId, isAuthenticated } = useAuthContext();
+ 
   const [car, dispatch] = useReducer(carReducer, {});
   const carService = useService(carServiceFactory)
   const navigate = useNavigate();
@@ -147,7 +147,9 @@ console.log(commentId);
 }
   return (
     <>
+    
     <div className={descrCar.detailsContainer}>
+    {<p> <Link className={descrCar.myButton} style={{float: "right"}} to={`/carList`} > X </Link></p>}
         <h2 className={descrCar.detailsh2}>Детайли</h2>
       <div className={descrCar.slideshowContainer} style={{ maxWidth: '500px', margin: '0 auto' }}>
         {slides.map((slide, index) => (
@@ -197,13 +199,13 @@ console.log(commentId);
      
       <div>
        
-        {isOwner && (  <Link to={`/carList/${car._id}/edit`} className="button">Edit</Link>)}
+        {isOwner && (  <Link  to={`/carList/${car._id}/edit`} ><button className={descrCar.myButton}>Edit</button></Link>)}
                       
                        
-        {isOwner && (<button className="button" onClick={onDeleteClick}>Delete</button>)}             
+        {isOwner && (<button className={descrCar.myButton} onClick={onDeleteClick}>Delete</button>)}             
                         
-        {isAuthenticated && <Link to={`/carList/${car._id}/comment`} >Add comment</Link>}
-       {isAuthenticated && <button onClick={onLike}>Like</button>}
+        {isAuthenticated && <Link  to={`/carList/${car._id}/comment`} ><button className={descrCar.myButton}>Add Comment</button></Link>}
+       {isAuthenticated && <button className={descrCar.myButton} onClick={onLike}>Like</button>}
         
         {car.likes && <p>Likes: {`${car.likes.length}`} </p>}
       </div>
@@ -215,7 +217,7 @@ console.log(commentId);
 
                            // isComAwner = x.author._id === user._id
                             
-                            <li key={x._id} className="comment">
+                            <li key={x._id} style={{ textAlign: 'left',backgroundColor:'grey'}}>
                                 
                                 <p>{x.author.email}: {x.comment}</p>
                                 { x.author._id === userId &&  <Buttons onDeleteComment={onDeleteComment} carId={car._id} commentId={x._id}/>}
@@ -225,12 +227,12 @@ console.log(commentId);
                             
                         ))}
                     </ul>
-
+                   
                     {!car.comments?.length && (
                         <p className="no-comment">No comments.</p>
                     )}
                 </div>
-
+               
       </div>
 
      

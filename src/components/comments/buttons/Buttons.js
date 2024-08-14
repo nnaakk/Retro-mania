@@ -4,7 +4,7 @@ import { gameServiceFactory } from "../../../services/gameService"
 import { useService } from "../../../hooks/useService"
 import * as commentService from '../../../services/commentService';
 */
-
+import but from './Buttons.module.css'
 export const Buttons = ({
    
     onDeleteComment,
@@ -19,6 +19,6 @@ export const Buttons = ({
 
     return (
    
-        <p><Link to={`/carComment/${commentId}/edit`} className="button">Edit</Link> <button onClick={() => onDeleteComment(commentId)} className="button">delite</button></p>
+        <p><Link to={`/carComment/${commentId}/edit`} ><button className={but.myButton}>Edit</button></Link> <button onClick={() => onDeleteComment(commentId)}  className={but.myButton}>Delete</button></p>
     )
 }

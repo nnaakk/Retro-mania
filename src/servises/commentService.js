@@ -1,4 +1,4 @@
-import { useEffect ,useState} from 'react';
+
 import { requestFactory } from './requester';
 
 const baseUrl = 'http://localhost:3030/data/comments';
@@ -18,7 +18,7 @@ export const getOneComment = async (commentId) => {
     const result = await request.get(`${baseUrl}`);
    const fresult = result.filter(x => x._id === commentId)
 
-    console.log(fresult[0]);
+   // console.log(fresult[0]);
     
     return fresult;
 };

@@ -22,11 +22,11 @@ export const EditCar = () => {
         _id:'',
         make: '',
         price: '',
-        imgUrl: 'y',
-        imgUr2: 'y',
-        imgUr3: 'y',
-        imgUr4: 'y',
-        engine: 'disel',
+        imgUrl1: '',
+        imgUrl2: '',
+        imgUrl3: '',
+        imgUrl4: '',
+        engine: 'diesel',
         gearBox: 'manual',
         year: '',
         power: '',
@@ -46,6 +46,7 @@ export const EditCar = () => {
             });
     }, [carId]);
 
+console.log(values.imgUrl1);
 
     
 
@@ -115,7 +116,7 @@ export const EditCar = () => {
               name="imgUrl1"
               id="imgUrl1"
               required=""
-              value={values.ingUrl1}
+              value={values.imgUrl1}
               onChange={changeHandler}
             />
              <label htmlFor="imgUrl2">
@@ -127,7 +128,7 @@ export const EditCar = () => {
               name="imgUrl2"
               id="imgUrl2"
               required=""
-              value={values.ingUrl2}
+              value={values.imgUrl2}
               onChange={changeHandler}
             />
              <label htmlFor="imgUrl3">
@@ -139,7 +140,7 @@ export const EditCar = () => {
               name="imgUrl13"
               id="imgUrl3"
               required=""
-              value={values.ingUrl3}
+              value={values.imgUrl3}
               onChange={changeHandler}
             />
              <label htmlFor="imgUrl4">
@@ -151,7 +152,7 @@ export const EditCar = () => {
               name="imgUrl4"
               id="imgUrl4"
               required=""
-              value={values.ingUrl4}
+              value={values.imgUrl4}
               onChange={changeHandler}
             />
              <label htmlFor="engine">
@@ -164,10 +165,10 @@ export const EditCar = () => {
               required=""
               value={values.engine}
               onChange={changeHandler}>
-              <option value="disel">Disel</option>
+              <option value="diesel">Disel</option>
               <option value="benzin">benzin</option>
               <option value="lpg">LPG</option>
-              <option value="audi">Electrik</option>
+              <option value="electric">Electric</option>
               </select>
 
             

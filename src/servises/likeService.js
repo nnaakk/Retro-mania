@@ -15,7 +15,7 @@ export const createLike = async (carId, like) => {
 export const getAllLikes = async (carId) => {
    
      const result = await request.get(`${baseUrl}`);
-     console.log(result[0].carId._id);
+    // console.log(result[0].carId._id);
      
      const likes = result.filter(x => x.carId._id === carId)
      return likes;

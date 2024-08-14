@@ -11,9 +11,8 @@
 .hed {
   width: 100%;
   height: 90px;
- 
-  position: fixed;
-  margin-top: 0px;
+ position: sticky;
+  z-index: 1000;
 }
 
 .li {

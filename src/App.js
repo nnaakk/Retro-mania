@@ -8,7 +8,7 @@ import { Header } from "./components/header/Header";
 import { Register } from "./components/register/Register";
 import { Login } from "./components/login/Login";
 import { Logout } from "./components/logaut/Logaut";
-import { Footer } from  "./components/footer/Footer"
+import { Footer } from "./components/footer/Footer"
 import { DescribeCar } from "./components/describeCar/DescribeCar"
 import { EditCar } from "./components/EditCar/EditCar"
 import { CarDetails } from './components/CarDetails/CarDetails'
@@ -17,26 +17,28 @@ import { AddComment } from "./components/comments/AddComments/AddComments";
 import { EditComment } from "./components/comments/EditComments/EditComment";
 
 function App() {
+  
+ 
 
   return (
     <AuthProvider>
-<CarProvider>
-      <Header />
-      <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/describe" element={<DescribeCar/>}  />
-      <Route path="/register" element={<Register />} />
-      <Route path="/login" element={<Login />} />
-      <Route path="/logout" element={<Logout/>} />
-      <Route path="/carlist" element={<CarList/>} />
-      <Route path="/carlist/:carId" element={<CarDetails/>} />
-      <Route path="/carlist/:carId/edit" element={ <EditCar/>} />
-      <Route path="/carList/:carId/comment" element={<AddComment/>} />
-      <Route path='/carComment/:commentId/edit/' element={<EditComment />} />
-      </Routes>
-      <Footer />
+      <CarProvider>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/describe" element={<DescribeCar />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/carlist" element={<CarList />} />
+          <Route path="/carlist/:carId" element={<CarDetails />} />
+          <Route path="/carlist/:carId/edit" element={<EditCar />} />
+          <Route path="/carList/:carId/comment" element={<AddComment />} />
+          <Route path='/carComment/:commentId/edit/' element={<EditComment />} />
+        </Routes>
+        <Footer />
       </CarProvider>
-      </AuthProvider>
+    </AuthProvider>
   );
 }
 
