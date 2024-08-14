@@ -1,20 +1,31 @@
-import { useCarContext } from '../../contexts/CarContext'
-import { useAuthContext } from '../../contexts/AuthContext';
+import { useEffect } from "react";
+import { useParams } from "react-router-dom";
+import { useCarContext } from "../../contexts/CarContext"
 
-import { useForm } from '../../hooks/useForm';
-import discrCar from "./DescribeCar.module.css"
-export const DescribeCar = () => {
+import { useForm } from "../../hooks/useForm";
 
-    let {userEmail} = useAuthContext
-   
-    const {onCreateCarSubmit} = useCarContext();
-    const { values, changeHandler, onSubmit } = useForm({
+import { useService } from "../../hooks/useService";
+
+import { carServiceFactory } from "../../servises/carService"
+
+import ediscr from "./EditCar.module.css"
+
+import {useAuthContext} from "../../contexts/AuthContext"
+
+export const EditCar = () => {
+  const userEmail = useAuthContext()
+    const { onCarEditSubmit } = useCarContext();
+    const { carId } = useParams();
+    const carService = useService(carServiceFactory);
+    const { values, changeHandler, onSubmit, changeValues } = useForm({
+        userEmail: {userEmail},
+        _id:'',
         make: '',
         price: '',
-        imgUrl1: '',
-        imgUrl2: '',
-        imgUrl3: '',
-        imgUrl4: '',
+        imgUrl: 'y',
+        imgUr2: 'y',
+        imgUr3: 'y',
+        imgUr4: 'y',
         engine: 'disel',
         gearBox: 'manual',
         year: '',
@@ -26,14 +37,25 @@ export const DescribeCar = () => {
         model: '',
        type:"",
        color: ""
-    }, onCreateCarSubmit);
+    }, onCarEditSubmit);
+
+    useEffect(() => {
+        carService.getOne(carId)
+            .then(result => {
+                changeValues(result);
+            });
+    }, [carId]);
+
+
     
-   
+
+
     return (
-        <section className={discrCar.body} >
+
+        <section className={ediscr.body} >
         <form method='post' onSubmit={onSubmit}>
-          <div className={discrCar.container}>
-            <h1>CAR</h1>
+          <div className={ediscr.container}>
+            <h1>Edit CAR</h1>
             <p>Please fill in this form to describe your car.</p>
             <hr />
             <label htmlFor="make">
@@ -93,7 +115,7 @@ export const DescribeCar = () => {
               name="imgUrl1"
               id="imgUrl1"
               required=""
-              value={values.imgUrl1}
+              value={values.ingUrl1}
               onChange={changeHandler}
             />
              <label htmlFor="imgUrl2">
@@ -105,7 +127,7 @@ export const DescribeCar = () => {
               name="imgUrl2"
               id="imgUrl2"
               required=""
-              value={values.imgUrl2}
+              value={values.ingUrl2}
               onChange={changeHandler}
             />
              <label htmlFor="imgUrl3">
@@ -114,10 +136,10 @@ export const DescribeCar = () => {
             <input
               type="text"
               placeholder="Enter imgUrl"
-              name="imgUrl3"
+              name="imgUrl13"
               id="imgUrl3"
               required=""
-              value={values.imgUrl3}
+              value={values.ingUrl3}
               onChange={changeHandler}
             />
              <label htmlFor="imgUrl4">
@@ -129,7 +151,7 @@ export const DescribeCar = () => {
               name="imgUrl4"
               id="imgUrl4"
               required=""
-              value={values.imgUrl4}
+              value={values.ingUrl4}
               onChange={changeHandler}
             />
              <label htmlFor="engine">
@@ -260,13 +282,13 @@ export const DescribeCar = () => {
             
             <hr />
            
-            <button type="submit" className={discrCar.registerbtn}>
-             Go
+            <button type="submit" className={ediscr.registerbtn}>
+             Edit
             </button>
           </div>
          
         </form>
         </section>
-    );
-   
-};
+
+    )
+}

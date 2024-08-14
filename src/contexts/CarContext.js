@@ -45,7 +45,7 @@ export const CarProvider = ({
 
         setCars(state => state.map(x => x._id === values._id ? result : x))
 
-        navigate(`/catalog/${values._id}`);
+        navigate(`/carList/${values._id}`);
     };
 
     const deleteCar = (gameId) => {

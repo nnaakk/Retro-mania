@@ -10,8 +10,12 @@ import { Login } from "./components/login/Login";
 import { Logout } from "./components/logaut/Logaut";
 import { Footer } from  "./components/footer/Footer"
 import { DescribeCar } from "./components/describeCar/DescribeCar"
+import { EditCar } from "./components/EditCar/EditCar"
 import { CarDetails } from './components/CarDetails/CarDetails'
 import { CarList } from "./components/carList/CarList"
+import { AddComment } from "./components/comments/AddComments/AddComments";
+import { EditComment } from "./components/comments/EditComments/EditComment";
+
 function App() {
 
   return (
@@ -26,6 +30,9 @@ function App() {
       <Route path="/logout" element={<Logout/>} />
       <Route path="/carlist" element={<CarList/>} />
       <Route path="/carlist/:carId" element={<CarDetails/>} />
+      <Route path="/carlist/:carId/edit" element={ <EditCar/>} />
+      <Route path="/carList/:carId/comment" element={<AddComment/>} />
+      <Route path='/carComment/:commentId/edit/' element={<EditComment />} />
       </Routes>
       <Footer />
       </CarProvider>

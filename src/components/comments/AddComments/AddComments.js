@@ -1,16 +1,16 @@
-import { useForm } from "../../hooks/useForm";
+import { useForm } from "../../../hooks/useForm";
 
 import { useReducer } from 'react';
 import { useParams, useNavigate} from 'react-router-dom';
 
-import { carServiceFactory } from '../../servises/carService';
-import * as commentService from '../../servises/commentService';
-import { useService } from '../../hooks/useService';
-import { useAuthContext } from '../../contexts/AuthContext';
+import { carServiceFactory } from '../../../servises/carService';
+import * as commentService from '../../../servises/commentService';
+import { useService } from '../../../hooks/useService';
+import { useAuthContext } from '../../../contexts/AuthContext';
 
 
-import { carReducer } from '../../redusers/carReduser';
-import { useCarContext } from '../../contexts/CarContext';
+import { carReducer } from '../../../redusers/carReduser';
+import { useCarContext } from '../../../contexts/CarContext';
 //import { Buttons } from '../AddComment/Buttons';
 //import { AddCommentButton } from '../AddComment/AddCommentButton';
 

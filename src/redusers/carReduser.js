@@ -1,7 +1,7 @@
 export const carReducer = (state, action) => {
     console.log(state);
     switch (action.type) {
-        case 'GAME_FETCH':
+        case 'CAR_FETCH':
             console.log(action);
             // return Object.assign({}, action.payload);
             return { ...action.payload };

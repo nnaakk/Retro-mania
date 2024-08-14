@@ -25,7 +25,8 @@ export const getOneComment = async (commentId) => {
 
 export const createComment = async (carId, comment) => {
     const result = await request.post(baseUrl, { carId, comment });
-
+     console.log(result);
+     
     return result;
 };
 export const editComment = async (commentId, comment,carId) => {

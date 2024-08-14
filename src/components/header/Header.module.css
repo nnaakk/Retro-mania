@@ -33,9 +33,10 @@
   list-style-type: circle;
   font-size: 22px;
   text-decoration: none;
-  color: rgb(235, 188, 34);
+  color: rgb(7, 5, 65);
   display: block;
   padding: 20px;
+  font-weight: bold;
   
   
 }

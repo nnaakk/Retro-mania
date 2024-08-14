@@ -10,10 +10,11 @@ export const Header = () => {
      <div className={headCss.hed}>
       <ul className={headCss.ul}>
         <li className={headCss.li}><Link  to="/" className={headCss.a} >Home</Link></li>
+        <li className={headCss.li}><Link  to="/carlist" className={headCss.a} >Cars</Link></li>
         {isAuthenticated && (
           <>
            <span style={{color: 'red',fontSize: '30px'}}>{userEmail}</span>
-        <li className={headCss.li}><Link to="/imiges" className={headCss.a}>Images</Link></li>
+        <li className={headCss.li}><Link to="/describe" className={headCss.a}>Show your Car</Link></li>
         <li className={headCss.li}><Link to="/logout" className={headCss.a}>Logout</Link></li>
         </>
          )}

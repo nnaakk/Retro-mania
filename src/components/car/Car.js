@@ -24,6 +24,8 @@ export const Car = ({
   
 
 }) => {
+
+ 
   return (
     <div className={carStyle.itemContainer}>
        
@@ -44,7 +46,7 @@ export const Car = ({
             </div>
            
             <div className={carStyle.links}>
-              <Link to ="/details" className={carStyle.detailsLink}>Повече детайли <strong>и 4 снимки</strong></Link>
+              <Link to ={`/carList/${_id}`} className={carStyle.detailsLink}>Повече детайли <strong>и 4 снимки</strong></Link>
              
             </div>
           </div>
@@ -68,7 +70,7 @@ export const Car = ({
           <div className={carStyle.info}>
            Char: {char}
           </div>
-          <Link to={`/carList/${_id}`} >Details</Link>
+         
           <div className={carStyle.seller}>
             
           </div>
