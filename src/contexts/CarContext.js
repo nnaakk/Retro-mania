@@ -30,7 +30,7 @@ export const CarProvider = ({
         if(isAuthenticated){
         const newCar = await carService.create(data);
 
-        setCars(state => [...state, newCar]);
+        setCars(state => [newCar, ...state]);
         navigate('/carlist');
       
         } else {
