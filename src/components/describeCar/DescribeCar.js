@@ -143,9 +143,9 @@ export const DescribeCar = () => {
               value={values.engine}
               onChange={changeHandler}>
               <option value="disel">Disel</option>
-              <option value="benzin">benzin</option>
+              <option value="benzin">Petrol</option>
               <option value="lpg">LPG</option>
-              <option value="audi">Electrik</option>
+              <option value="audi">Electric</option>
               </select>
 
             

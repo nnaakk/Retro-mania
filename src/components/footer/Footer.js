@@ -8,7 +8,7 @@ export const Footer = () => {
  bottom: "0",
   width:"100%",
   "backgrounColor":"red",
-  color: "white",
+  color: "red",
  
 }}>Copyright © designed by Nikolay Kolarov</p>
           </footer>

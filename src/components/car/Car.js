@@ -62,7 +62,7 @@ export const Car = ({
             </div>
           </div>
           <div className={carStyle.params}>
-            <span>✓ {year} y.</span> <span>✓  km</span>
+            <span>✓ {year} y.</span> 
             <span>✓{color}</span> <span>✓{engine}</span> <span>✓ {power} hp</span>
             <span>✓ {mileage} km</span> <span>✓{volume} cm3</span> <span>✓ {gearBox}</span>
             <span>✓ {type}</span>

@@ -137,7 +137,7 @@ console.log(values.imgUrl1);
             <input
               type="text"
               placeholder="Enter imgUrl"
-              name="imgUrl13"
+              name="imgUrl3"
               id="imgUrl3"
               required=""
               value={values.imgUrl3}

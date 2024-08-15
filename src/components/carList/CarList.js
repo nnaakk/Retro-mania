@@ -18,7 +18,7 @@ export const CarList = () => {
              {cars.length === 0 && (
                 <h3 style={{textAlign:"center", color:"black"}}>No cars yet</h3>
             )}
-            {cars.map(x =>
+            {cars.reverse().map(x =>
                 <Car key={x._id} {...x} />
             )}
             </div>
