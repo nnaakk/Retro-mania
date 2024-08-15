@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import { useContext } from 'react'
 import { AuthContext } from '../../contexts/AuthContext'
 export const Header = () => {
+  
   const {isAuthenticated, userEmail} = useContext(AuthContext)
     return (
      
