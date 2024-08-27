@@ -287,9 +287,9 @@ console.log(values.imgUrl1);
              Edit
             </button>
           </div>
-         
-        </form>
+          </form>
         </section>
 
     )
-}
+}  
+     

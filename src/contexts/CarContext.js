@@ -1,6 +1,6 @@
 import { createContext, useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
-import {useAuthContext} from '../contexts/AuthContext'
+import { useAuthContext } from '../contexts/AuthContext'
 import { carServiceFactory } from '../servises/carService';
 
 export const CarContext = createContext();
@@ -23,21 +23,21 @@ export const CarProvider = ({
             })
     }, []);
 
-    const onCreateCarSubmit = async (data) => { 
+    const onCreateCarSubmit = async (data) => {
 
         console.log(isAuthenticated);
-        
-        if(isAuthenticated){
-        const newCar = await carService.create(data);
 
-        setCars(state => [newCar, ...state]);
-        navigate('/carlist');
-      
+        if (isAuthenticated) {
+            const newCar = await carService.create(data);
+
+            setCars(state => [newCar, ...state]);
+            navigate('/carlist');
+
         } else {
-        navigate('/login');
-        return
-      }
-        
+            navigate('/login');
+            return
+        }
+
     };
 
     const onCarEditSubmit = async (values) => {

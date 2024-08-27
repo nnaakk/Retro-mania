@@ -1,0 +1,62 @@
+/* Контейнер за всяка кола */
+.itemContainer {
+    margin-right: 20px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Подравнява колите отляво */
+  }
+  
+  /* Всяка отделна кола */
+  .item {
+    width: 170px;
+    height: 220px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    background-color: #fff;
+    margin-bottom: 20px; /* Добавя разстояние между колите */
+  }
+  
+  /* Снимката на колата */
+  .photo {
+    margin-bottom: 1px; /* Добавя малко разстояние под снимката */
+    margin-top: 10px;
+  }
+  
+  /* Картинка на колата */
+  .mainPic {
+    width: 150px;
+    height: 150px;
+    border-radius: 4px;
+    object-fit: cover;
+  }
+  
+  /* Текстова част */
+  .text {
+    text-align: left; /* Подравнява текста отляво */
+    width: 100%;
+    padding: 0 10px;
+  }
+  
+  /* Заглавие */
+  .titleLink {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+    text-align: left; /* Подравнява заглавието отляво */
+  }
+  
+  /* Цена */
+  .price {
+    font-size: 16px;
+    color: #27ae60;
+    font-weight: bold;
+    margin-top: 5px;
+  }
+  

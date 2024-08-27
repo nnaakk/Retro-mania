@@ -1,15 +1,40 @@
-*{box-sizing:border-box}
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+  padding-top: 250px; /* Увеличено отстояние отгоре, ако има фиксиран хедър */
+  margin: 0;
+}
+
+/* Container for details */
+.detailsContainer {
+  max-width: 1000px;
+  margin: 100px auto; /* Увеличено отстояние отгоре и отдолу */
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
 
 /* Slideshow container */
 .slideshowContainer {
-  max-width: 1000px;
+  width: 800px; /* Фиксирана ширина на слайдшоуто */
   position: relative;
-  margin: auto;
+  margin: 0 auto 40px auto; /* Центриране на слайдшоуто и отстояние отдолу */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  background-color: #fff; /* Възстановяване на фоновия цвят */
 }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
+/* Image styling */
+.mySlides img {
+  width: 100%;
+  height: 450px; /* Фиксирана височина за изображението */
+  object-fit: cover;
+  display: block;
 }
 
 /* Next & previous buttons */
@@ -17,54 +42,38 @@
   cursor: pointer;
   position: absolute;
   top: 50%;
-  width: auto;
-  margin-top: -22px;
-  padding: 16px;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  padding: 10px;
   color: white;
   font-weight: bold;
-  font-size: 18px;
-  transition: 0.6s ease;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
+  font-size: 24px;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  z-index: 2;
 }
 
-/* Position the "next button" to the right */
+.prev2 {
+  left: 10px;
+}
+
 .next2 {
-  right: 0;
-  border-radius: 3px 0 0 3px;
+  right: 10px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev2:hover, .next2:hover {
-  background-color: rgba(0,0,0,0.8);
-}
-
-/* Caption text */
-.text2 {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext2 {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
+  background-color: rgba(0, 0, 0, 0.8);
 }
 
 /* The dots/bullets/indicators */
 .dot2 {
   cursor: pointer;
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
@@ -73,56 +82,4 @@
 
 .active2, .dot2:hover {
   background-color: #717171;
-}
-
-/* Fading animation */
-.fade2 {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: .4}
-  to {opacity: 1}
-}
-
-.detailsContainer{
-  width: 100%;
-  background-color: white;
-  height: 100vh;
-}
-
-.detailsh2{
-  color: black;
-  text-align: center;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.carDescription p {
-  color: black;
-  margin-top: 10px;
-  padding: 10px;
-  text-align: center;
-}
-.myButton{
-  box-shadow: 3px 4px 26px -50px #1564ad;
-  background: linear-gradient(to bottom,#79bbff 5%, #378de5 100%);
-  background-color: #79bbff;
-  border-radius: 5px;
-  border: 1px solid #337bc4;
-  display: inline-block;
-  cursor: pointer;
-  color: #ffffff;
-  font-size: 17px;
-  font-weight: bold;
-  padding: 12px 43px;
-  text-decoration: none;
-  text-shadow: 0px 1px 0px #378de5;
-  margin-right: 5px;
-}
-
-.myButton:active{
-  position: relative;
-  top: 1px;
 }

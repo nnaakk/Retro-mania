@@ -1,64 +1,119 @@
+/* Общи стилове */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-   .body {
-        font-family: Arial, Helvetica, sans-serif;
-        background-color: rgb(71, 87, 75);
-        color: black;
-        box-sizing: border-box;
-        padding: auto;
-        margin-left: 300px;
-        border-radius: 10px;
-        width: 60%;
-       
-      }
-        
-
-
-/* Add padding to containers */
+/* Контейнер за формата */
 .container {
-  padding: 16px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  box-sizing: border-box;
 }
 
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 97%;
-  padding: 15px;
-  margin: 5px 0 22px 0;
-  display: inline-block;
-  border: none;
-  background: #f1f1f1;
+/* Заглавие на формата */
+.container h1 {
+  font-size: 32px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
 }
 
-input[type=text]:focus, input[type=password]:focus {
-  background-color: #ddd;
+/* Параграф в контейнера */
+.container p {
+  font-size: 16px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #666;
+}
+
+/* Входни полета */
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+  font-size: 16px;
+}
+
+/* Входни полета при фокус */
+input[type="text"]:focus,
+input[type="password"]:focus {
+  border-color: #007bff;
   outline: none;
 }
-hr {
-    border: 1px solid #f1f1f1;
-    margin-bottom: 25px;
-  }
-  
-  /* Set a style for the submit/register button */
-  .registerbtn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    opacity: 0.9;
-  }
-  
-  .registerbtn:hover {
-    opacity:1;
-  }
-  
-  /* Add a blue text color to links */
-  a {
-    color: dodgerblue;
-  }
-  /* Set a grey background color and center the text of the "sign in" section */
+
+/* Входни полета валидни и невалидни */
+input[type="text"].valid,
+input[type="password"].valid {
+  border-color: green;
+}
+
+input[type="text"].invalid,
+input[type="password"].invalid {
+  border-color: red;
+}
+
+/* Стил за бутона */
+.registerbtn {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+  text-align: center;
+}
+
+/* Ховър ефект за бутона */
+.registerbtn:hover {
+  background-color: #0056b3;
+}
+
+/* Стил за линковете */
+a {
+  color: #007bff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+/* Ховър ефект за линковете */
+a:hover {
+  color: #0056b3;
+}
+
+/* Стил за секцията за вход */
 .signin {
-    background-color: #f0b9b9;
-    text-align: center;
-  }
+  background-color: #f9f9f9;
+  text-align: center;
+  padding: 15px;
+  border-top: 1px solid #ccc;
+  border-radius: 0 0 10px 10px;
+  margin-top: 20px;
+}
+
+/* Разделителна линия */
+hr {
+  border: none;
+  border-top: 1px solid #ccc;
+  margin: 20px 0;
+}

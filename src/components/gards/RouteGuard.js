@@ -3,18 +3,18 @@ import { useAuthContext } from "../../contexts/AuthContext";
 
 
 export const RouteGard = ({
-   children
+  children
 }) => {
-    const { isAuthenticated } = useAuthContext()
+  const { isAuthenticated } = useAuthContext()
 
-    if (!isAuthenticated) {
-      
-       return  <Navigate to="/login" />
-    }
+  if (!isAuthenticated) {
 
-    return (
-        <>
-      {children}   
-        </>
-    )
+    return <Navigate to="/login" />
+  }
+
+  return (
+    <>
+      {children}
+    </>
+  )
 }

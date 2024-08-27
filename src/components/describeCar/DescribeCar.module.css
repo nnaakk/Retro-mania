@@ -1,64 +1,187 @@
-
 .body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: rgb(71, 87, 75);
-    color: black;
-    box-sizing: border-box;
-    padding: auto;
-    margin-left: 400px;
-    
-    border-radius: 10px;
-    width: 40%;
-  }
-    
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f8;
+  color: #333;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 150px auto 80px; /* Отстояние отгоре и отдолу */
+  border-radius: 15px; /* По-заоблени ъгли */
+  max-width: 700px; /* Максимална ширина за големи екрани */
+  width: 70%; /* Относителна ширина */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Добавяне на сенки за дълбочина */
+}
 
-
-/* Add padding to containers */
 .container {
-padding: 16px;
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
 }
 
-/* Full-width input fields */
-input[type=text], input[type=Number],textarea[type=textarea] {
-width: 97%;
-padding: 15px;
-margin: 5px 0 22px 0;
-display: inline-block;
-border: none;
-background: #f1f1f1;
+/* Стил за текстови полета и textarea */
+input[type=text], input[type=Number], textarea[type=textarea], select {
+  width: 100%;
+  padding: 12px; /* По-голямо вътрешно отстояние за комфорт */
+  margin: 10px 0 20px 0; /* Разстояние между полетата */
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* Заоблени ъгли на полетата */
+  background: #fff;
+  font-size: 16px; /* По-голям шрифт за четимост */
+  transition: border-color 0.3s ease; /* Преход при фокус */
 }
 
-input[type=text]:focus, input[type=Number]:focus,textarea[type=textarea]:focus {
-background-color: #ddd;
-outline: none;
+input[type=text]:focus, input[type=Number]:focus, textarea[type=textarea]:focus {
+  border-color: #04AA6D; /* Подчертаване при фокус */
+  outline: none;
 }
+
 hr {
-border: 1px solid #f1f1f1;
-margin-bottom: 25px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 25px;
 }
 
-/* Set a style for the submit/register button */
+/* Стил за бутона */
 .registerbtn {
-background-color: #04AA6D;
-color: white;
-padding: 16px 20px;
-margin: 8px 0;
-border: none;
-cursor: pointer;
-width: 100%;
-opacity: 0.9;
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px; /* По-голям бутон */
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px; /* По-голям текст за бутона */
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Преходи за визуална обратна връзка */
 }
 
 .registerbtn:hover {
-opacity:1;
+  background-color: #039e5c; /* По-тъмен нюанс при задържане */
+  transform: translateY(-2px); /* Лек подскок при задържане */
 }
 
-/* Add a blue text color to links */
 a {
-color: dodgerblue;
+  color: #04AA6D;
+  text-decoration: none;
+  font-weight: bold;
 }
-/* Set a grey background color and center the text of the "sign in" section */
+
+a:hover {.body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f8;
+  color: #333;
+  box-sizing: border-box;
+  padding: 20px;
+  margin: 150px auto 80px; 
+  border-radius: 15px;
+  max-width: 700px;
+  width: 70%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative; /* Позволява позициониране на бутона за затваряне */
+}
+
+.container {
+  padding: 20px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+/* Бутон за затваряне */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: #ff5c5c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.close-btn:hover {
+  background-color: #ff2e2e; /* По-тъмен нюанс при задържане */
+}
+
+/* Стил за текстови полета и textarea */
+input[type=text], input[type=Number], textarea[type=textarea], select {
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0 20px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+input[type=text]:hover, input[type=Number]:hover, textarea[type=textarea]:hover, select:hover {
+  border-color: #04AA6D; /* Зелена рамка при задържане */
+}
+
+input[type=text]:focus, input[type=Number]:focus, textarea[type=textarea]:focus {
+  border-color: #04AA6D;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #e0e0e0;
+  margin-bottom: 25px;
+}
+
+.registerbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 14px 20px;
+  margin: 10px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  border-radius: 8px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.registerbtn:hover {
+  background-color: #039e5c;
+  transform: translateY(-2px);
+}
+
+a {
+  color: #04AA6D;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 .signin {
-background-color: #f0b9b9;
-text-align: center;
+  background-color: #eef1f3;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 14px;
+}
+
+  text-decoration: underline;
+}
+
+.signin {
+  background-color: #eef1f3;
+  text-align: center;
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 15px;
+  font-size: 14px;
 }

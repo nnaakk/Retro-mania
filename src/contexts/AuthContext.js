@@ -16,18 +16,18 @@ export const AuthProvider = ({
 
     const onLoginSubmit = async (data) => {
 
-     const {email, password} = data
+        const { email, password } = data
 
-     if(data.email === '' || data.password === ''){
-        alert("All fields are requered!")
-        return
-     }
-     if(!data.email.includes('@')){
-        alert(`Email is not email!`)
-        return;
-     }
+        if (data.email === '' || data.password === '') {
+            alert("All fields are requered!")
+            return
+        }
+        if (!data.email.includes('@')) {
+            alert(`Email is not email!`)
+            return;
+        }
 
-     
+
         try {
             const result = await authService.login(data);
 
@@ -35,13 +35,13 @@ export const AuthProvider = ({
 
             navigate('/');
         } catch (error) {
-           alert('There is a problem');
+            alert('There is a problem');
         }
     };
 
     const onRegisterSubmit = async (values) => {
         const { pswRepeat, ...registerData } = values;
-        if(registerData.password === ''|| registerData.pswRepeat === '' || registerData.email === ''){
+        if (registerData.password === '' || registerData.pswRepeat === '' || registerData.email === '') {
             alert("All fields are requered!")
             return
         }
@@ -49,9 +49,9 @@ export const AuthProvider = ({
             alert(`Passwords missmuch!`)
             return;
         }
-        if(!registerData.email.includes("@")){
+        if (!registerData.email.includes("@")) {
             alert(`Email is not email!`)
-        return;
+            return;
         }
         try {
             const result = await authService.register(registerData);

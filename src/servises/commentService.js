@@ -16,25 +16,25 @@ export const getAllComments = async (carId) => {
 
 export const getOneComment = async (commentId) => {
     const result = await request.get(`${baseUrl}`);
-   const fresult = result.filter(x => x._id === commentId)
+    const fresult = result.filter(x => x._id === commentId)
 
-   // console.log(fresult[0]);
-    
+    // console.log(fresult[0]);
+
     return fresult;
 };
 
 export const createComment = async (carId, comment) => {
     const result = await request.post(baseUrl, { carId, comment });
-     console.log(result);
-     
+    console.log(result);
+
     return result;
 };
-export const editComment = async (commentId, comment,carId) => {
+export const editComment = async (commentId, comment, carId) => {
     const result = request.put(`${baseUrl}/${commentId}`, { carId, comment })
     return result
-    
+
 }
-export const terminate =   (comentId) => {
+export const terminate = (comentId) => {
     console.log(comentId);
     request.delete(`${baseUrl}/${comentId}`);
 }

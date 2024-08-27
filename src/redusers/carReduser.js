@@ -15,43 +15,43 @@ export const carReducer = (state, action) => {
                         ...action.payload,
                         author: {
                             email: action.userEmail,
-                            _id : action.userId
+                            _id: action.userId
                         }
                     }
-                ] ,likes: [...state.likes]
+                ], likes: [...state.likes]
             }
 
-            case 'COMMENT_DEL':
-                return {
-                    ...state,
-                    comments: state.comments.filter(x => x._id !== action.payload),
-                    likes: [...state.likes]
-                }
-                case 'COMMENT_EDIT':
-                    console.log(action.payload);
-                    return {
-                        ...state,
-                        comments: [
-                            ...state.comments,
-                            {
-                                ...action.payload,
-                               
-                            }
-                        ],
-                        likes: [...state.likes]
-                       
-                    }
+        case 'COMMENT_DEL':
+            return {
+                ...state,
+                comments: state.comments.filter(x => x._id !== action.payload),
+                likes: [...state.likes]
+            }
+        case 'COMMENT_EDIT':
+            console.log(action.payload);
+            return {
+                ...state,
+                comments: [
+                    ...state.comments,
+                    {
+                        ...action.payload,
 
-                    case 'LIKE_ADD' :
-                    
-                    
-                    return {
-                       ...state,  comments: [
-                            ...state.comments,
-                           
-                        ],
-                        likes: [...state.likes, {...action.payload}]
                     }
+                ],
+                likes: [...state.likes]
+
+            }
+
+        case 'LIKE_ADD':
+
+
+            return {
+                ...state, comments: [
+                    ...state.comments,
+
+                ],
+                likes: [...state.likes, { ...action.payload }]
+            }
 
         default:
             return state;
